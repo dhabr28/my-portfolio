@@ -50,10 +50,21 @@
   </div>
 </div>
   
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-title="Rickroll" frameborder="0"></iframe>
+<audio id="rickroll-audio" src="rickroll.mp3"></audio>
 
-	
+<script>
+let played = false;
+
+window.onscroll = function() {
+  if (played) return;
+  
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    document.getElementById('rickroll-audio').play();
+    played = true;
+    alert("Never gonna give you up 🎶");
+  }
+};
+</script>
 </body>
 
 </html>
